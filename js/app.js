@@ -20,16 +20,17 @@ var app = {
 
         for(var i=0;i<app.CIRCLE_NUM;i++) {
 
-            var shape = new createjs.Shape();
-            //Width of the stroke
-            shape.graphics.setStrokeStyle(15);
-            shape.graphics.beginStroke('#113355');
-            shape.graphics.drawCircle(0, 0, (i+1)*4);
+            var circle = new Circle((i+1)*4);
 
-            shape.x = Math.random()*400;
-            shape.y = Math.random()*400;
+            circle.shape.x = Math.random()*400;
+            circle.shape.y = Math.random()*400;
 
-            app.stage.addChild(shape);
+            circle.shape.scaleX = 2;
+            circle.shape.scaleY = 2;
+
+            app.stage.addChild(circle.shape);
+
+            TweenLite.to(circle.shape, 1, {x:400, y:400, ease:Elastic.easeOut})
 
         }
 

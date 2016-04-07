@@ -28,10 +28,27 @@ var app = {
             circle.shape.scaleX = 2;
             circle.shape.scaleY = 2;
 
+            app.circles.push(circle);
+
             app.stage.addChild(circle.shape);
 
             TweenLite.to(circle.shape, 1, {x:400, y:400, ease:Elastic.easeOut})
 
+        }
+
+    },
+    listenForClick:function(){
+
+        app.stage.addEventListener('stagemousemove', app.onMouseUp);
+
+    },
+    onMouseUp:function(evt){
+
+        for(var i=0;i<app.circles.length;i++){
+
+            var circle = app.circles[i];
+
+            circle.animateTo({ x:app.stage.mouseX, y:app.stage.mouseY }, i*2/app.CIRCLE_NUM);
         }
 
     },
@@ -46,3 +63,4 @@ var app = {
 
 app.init();
 app.draw();
+app.listenForClick();

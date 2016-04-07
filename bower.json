@@ -1,0 +1,22 @@
+{
+  "name": "createjs",
+  "authors": [
+    "Zan Marolt <marolt.zan@hotmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gsap": "greensock#^1.18.2",
+    "EaselJS": "easeljs#^0.8.2"
+  }
+}
